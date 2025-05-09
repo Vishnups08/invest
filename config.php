@@ -1,9 +1,9 @@
 <?php
 // Database connection
-$servername = "localhost";
-$username = "root"; // Change if needed
-$password = ""; // Change if needed
-$database = "invest"; // Update your database name
+$servername = "sql12.freesqldatabase.com";
+$username = "sql12777636"; // Change if needed
+$password = "7YypCXcYQm"; // Change if needed
+$database = "sql12777636"; // Update your database name
 
 $conn = new mysqli($servername, $username, $password, $database);
 
