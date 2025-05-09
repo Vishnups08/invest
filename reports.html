@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="reports.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <h2><i class="fas fa-laptop-code"></i> Asset & invest Manager</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="assets.php"><i class="fas fa-laptop"></i> Assets</a></li>
+                <li><a href="investments.php"><i class="fas fa-chart-line"></i> Investments</a></li>
+                <li><a href="audits.html"><i class="fas fa-clipboard-check"></i> Audits</a></li>
+                <li class="active"><a href="reports.html"><i class="fas fa-file-alt"></i> Reports</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="toggle-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search reports...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="user-profile">
+                    <span class="notification-icon"><i class="fas fa-bell"></i></span>
+                    <div class="profile-img">
+                        <img src="profile.jpeg" alt="User Profile">
+                    </div>
+                    <span class="user-name">Vishnu PS</span>
+                </div>
+            </div>
+
+            <!-- Reports Content -->
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>Reports</h1>
+                    <p>Generate, view, and manage reports for your IT assets and operations</p>
+                </div>
+
+                <!-- Report Generation Section -->
+                <div class="report-generation-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-file-medical"></i> Generate New Report</h2>
+                    </div>
+                    <div class="report-templates">
+                        <div class="report-template-card">
+                            <div class="template-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="template-info">
+                                <h3>Asset Inventory</h3>
+                                <p>Complete inventory of all IT assets with status and location</p>
+                            </div>
+                            <button class="generate-btn">Generate</button>
+                        </div>
+                        <div class="report-template-card">
+                            <div class="template-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="template-info">
+                                <h3>Financial Summary</h3>
+                                <p>Financial overview of all IT investments and assets</p>
+                            </div>
+                            <button class="generate-btn">Generate</button>
+                        </div>
+                        <div class="report-template-card">
+                            <div class="template-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <div class="template-info">
+                                <h3>Audit History</h3>
+                                <p>Complete history of all audits with findings and resolutions</p>
+                            </div>
+                            <button class="generate-btn">Generate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Custom Report Modal -->
+    <div class="modal" id="custom-report-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-file-medical"></i> Create Custom Report</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="custom-report-form" action="generate_report.php" method="post">
+                    <!-- In the custom-report-form section, update the input fields to include name attributes -->
+                    <div class="form-group">
+                        <label for="report-name">Report Name</label>
+                        <input type="text" id="report-name" name="report_name" placeholder="Enter report name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="report-description">Description</label>
+                        <textarea id="report-description" name="description" rows="3" placeholder="Enter report description"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="data-source">Data Source</label>
+                            <select id="data-source" name="data_source" required>
+                                <option value="">Select Data Source</option>
+                                <option value="assets">Assets</option>
+                                <option value="investments">Investments</option>
+                                <option value="audits">Audits</option>
+                                <option value="users">Users</option>
+                                <option value="vendors">Vendors</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="report-format">Format</label>
+                            <select id="report-format" name="format" required>
+                                <option value="pdf">PDF</option>
+                                <option value="excel">Excel</option>
+                                <option value="csv">CSV</option>
+                                <option value="html">HTML</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Include Fields</label>
+                        <div class="field-selection">
+                            <div class="field-item">
+                                <input type="checkbox" id="field1" name="fields[]" value="id" checked>
+                                <label for="field1">ID</label>
+                            </div>
+                            <div class="field-item">
+                                <input type="checkbox" id="field2" name="fields[]" value="name" checked>
+                                <label for="field2">Name</label>
+                            </div>
+                            <div class="field-item">
+                                <input type="checkbox" id="field3" name="fields[]" value="type" checked>
+                                <label for="field3">Type</label>
+                            </div>
+                            <div class="field-item">
+                                <input type="checkbox" id="field4" name="fields[]" value="status" checked>
+                                <label for="field4">Status</label>
+                            </div>
+                            <div class="field-item">
+                                <input type="checkbox" id="field5" name="fields[]" value="location" checked>
+                                <label for="field5">Location</label>
+                            </div>
+                            <div class="field-item">
+                                <input type="checkbox" id="field6" name="fields[]" value="purchase_date">
+                                <label for="field6">Purchase Date</label>
+                            </div>
+                            <div class="field-item">
+                                <input type="checkbox" id="field7" name="fields[]" value="purchase_cost">
+                                <label for="field7">Purchase Cost</label>
+                            </div>
+                            <div class="field-item">
+                                <input type="checkbox" id="field8" name="fields[]" value="assigned_to">
+                                <label for="field8">Assigned To</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn">Cancel</button>
+                        <button type="submit" class="submit-btn">Generate Report</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="reports.js"></script>
+</body>
+</html>

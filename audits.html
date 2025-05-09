@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Asset Management - Audits</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo">
+            <h2><i class="fas fa-laptop-code"></i> Asset & invest Manager</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="assets.php"><i class="fas fa-laptop"></i> Assets</a></li>
+            <li><a href="investments.php"><i class="fas fa-chart-line"></i> Investments</a></li>
+            <li class="active"><a href="audits.html"><i class="fas fa-clipboard-check"></i> Audits</a></li>
+            <li><a href="reports.html"><i class="fas fa-file-alt"></i> Reports</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="toggle-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search audits...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="user-profile">
+                    <span class="notification-icon"><i class="fas fa-bell"></i></span>
+                    <div class="profile-img">
+                        <img src="profile.jpeg" alt="User Profile">
+                    </div>
+                    <span class="user-name">Vishnu PS</span>
+                </div>
+            </div>
+
+            <!-- Audits Content -->
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>Audit Management</h1>
+                    <p>Schedule, track, and manage compliance audits for your IT assets</p>
+                </div>
+
+                <!-- Audit Summary Cards -->
+                <div class="summary-cards">
+                    <div class="card">
+                        <div class="card-icon blue">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Total Audits</h3>
+                            <p class="value">48</p>
+                            <p class="change positive"><i class="fas fa-arrow-up"></i> 6 more than last quarter</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon green">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Compliance Rate</h3>
+                            <p class="value">92.5%</p>
+                            <p class="change positive"><i class="fas fa-arrow-up"></i> 3.2% since last audit</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon orange">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Issues Found</h3>
+                            <p class="value">12</p>
+                            <p class="change negative"><i class="fas fa-arrow-up"></i> 3 more than last audit</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon purple">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Upcoming Audits</h3>
+                            <p class="value">5</p>
+                            <p class="change neutral">Next in 7 days</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audit Timeline Section with Enhanced UI -->
+                <div class="audit-timeline-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-history"></i> Audit Timeline</h2>
+                        <div class="timeline-filters">
+                            <button class="timeline-filter-btn active" data-filter="all">
+                                <i class="fas fa-list-ul"></i> All
+                            </button>
+                            <button class="timeline-filter-btn" data-filter="completed">
+                                <i class="fas fa-check-circle"></i> Completed
+                            </button>
+                            <button class="timeline-filter-btn" data-filter="in-progress">
+                                <i class="fas fa-spinner fa-pulse"></i> In Progress
+                            </button>
+                            <button class="timeline-filter-btn" data-filter="upcoming">
+                                <i class="fas fa-calendar-day"></i> Upcoming
+                            </button>
+                        </div>
+                    </div>
+                    <div class="audit-timeline">
+                        <div class="timeline-item completed">
+                            <div class="timeline-date">
+                                <span class="date">15</span>
+                                <span class="month">Mar</span>
+                                <span class="year">2023</span>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>Software License Audit</h3>
+                                    <span class="badge success">Completed</span>
+                                </div>
+                                <p class="timeline-assignee"><i class="fas fa-user-check"></i> Completed by: Rahul Sharma</p>
+                                <div class="timeline-details">
+                                    <div class="timeline-metric success">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>98% Compliance</span>
+                                    </div>
+                                    <div class="timeline-metric warning">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        <span>2 Issues</span>
+                                    </div>
+                                    <button class="view-report-btn"><i class="fas fa-file-alt"></i> View Report</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-date">
+                                <span class="date">02</span>
+                                <span class="month">Apr</span>
+                                <span class="year">2023</span>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>Hardware Inventory Audit</h3>
+                                    <span class="badge success">Completed</span>
+                                </div>
+                                <p class="timeline-assignee"><i class="fas fa-user-check"></i> Completed by: Priya Patel</p>
+                                <div class="timeline-details">
+                                    <div class="timeline-metric success">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>95% Compliance</span>
+                                    </div>
+                                    <div class="timeline-metric warning">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        <span>5 Issues</span>
+                                    </div>
+                                    <button class="view-report-btn"><i class="fas fa-file-alt"></i> View Report</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item in-progress">
+                            <div class="timeline-date">
+                                <span class="date">18</span>
+                                <span class="month">Apr</span>
+                                <span class="year">2023</span>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>Security Compliance Audit</h3>
+                                    <span class="badge primary">In Progress</span>
+                                </div>
+                                <p class="timeline-assignee"><i class="fas fa-user-check"></i> Assigned to: Vikram Singh</p>
+                                <div class="timeline-details">
+                                    <div class="timeline-metric primary">
+                                        <i class="fas fa-clock"></i>
+                                        <span>3 days remaining</span>
+                                    </div>
+                                    <button class="view-report-btn"><i class="fas fa-file-alt"></i> View Report</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item upcoming">
+                            <div class="timeline-date">
+                                <span class="date">05</span>
+                                <span class="month">May</span>
+                                <span class="year">2023</span>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>Network Infrastructure Audit</h3>
+                                    <span class="badge purple">Upcoming</span>
+                                </div>
+                                <p class="timeline-assignee"><i class="fas fa-user-check"></i> Assigned to: Ananya Desai</p>
+                                <div class="timeline-details">
+                                    <div class="timeline-metric purple">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>Starts in 14 days</span>
+                                    </div>
+                                    <button class="view-report-btn"><i class="fas fa-file-alt"></i> View Report</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Audit Records Table -->
+                <div class="table-section">
+                    <div class="table-header">
+                        <div class="header-left">
+                            <h2><i class="fas fa-clipboard-list"></i> Audit Records</h2>
+                            <span class="records-count">Showing 10 of 48 records</span>
+                        </div>
+                        <div class="table-actions">
+                            <button class="add-btn" id="add-audit-btn"><i class="fas fa-plus"></i> Schedule Audit</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced Table with Visual Improvements -->
+                    <div class="table-container">
+                        <table class="audits-table">
+                            <thead>
+                                <tr>
+                                    <th><i class="fas fa-hashtag"></i> ID</th>
+                                    <th><i class="fas fa-tag"></i> Type</th>
+                                    <th><i class="fas fa-clipboard-check"></i> Name</th>
+                                    <th><i class="fas fa-user"></i> Assignee</th>
+                                    <th><i class="fas fa-calendar-alt"></i> Date</th>
+                                    <th><i class="fas fa-chart-pie"></i> Compliance</th>
+                                    <th><i class="fas fa-info-circle"></i> Status</th>
+                                    <th><i class="fas fa-cog"></i> Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AUD-001</td>
+                                    <td>Software</td>
+                                    <td>Software License Audit</td>
+                                    <td>Rahul Sharma</td>
+                                    <td>15 Mar 2023</td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 98%"></div>
+                                            <span>98%</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>
+                                        <button class="action-btn view" title="View Details"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn report" title="View Report"><i class="fas fa-file-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>AUD-002</td>
+                                    <td>Hardware</td>
+                                    <td>Hardware Inventory Audit</td>
+                                    <td>Priya Patel</td>
+                                    <td>02 Apr 2023</td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 95%"></div>
+                                            <span>95%</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>
+                                        <button class="action-btn view" title="View Details"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn report" title="View Report"><i class="fas fa-file-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>AUD-003</td>
+                                    <td>Security</td>
+                                    <td>Security Compliance Audit</td>
+                                    <td>Vikram Singh</td>
+                                    <td>18 Apr 2023</td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress in-progress" style="width: 65%"></div>
+                                            <span>65%</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge in-progress">In Progress</span></td>
+                                    <td>
+                                        <button class="action-btn view" title="View Details"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit" title="Edit"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>AUD-004</td>
+                                    <td>Network</td>
+                                    <td>Network Infrastructure Audit</td>
+                                    <td>Ananya Desai</td>
+                                    <td>05 May 2023</td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress upcoming" style="width: 0%"></div>
+                                            <span>0%</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge upcoming">Upcoming</span></td>
+                                    <td>
+                                        <button class="action-btn view" title="View Details"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>AUD-005</td>
+                                    <td>Data</td>
+                                    <td>Data Protection Audit</td>
+                                    <td>Rahul Sharma</td>
+                                    <td>20 May 2023</td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress upcoming" style="width: 0%"></div>
+                                            <span>0%</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge upcoming">Upcoming</span></td>
+                                    <td>
+                                        <button class="action-btn view" title="View Details"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Enhanced Pagination -->
+                    <div class="pagination">
+                        <div class="pagination-controls">
+                            <button class="page-btn disabled" title="Previous Page"><i class="fas fa-chevron-left"></i></button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn">4</button>
+                            <button class="page-btn">5</button>
+                            <button class="page-btn" title="Next Page"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Audit Modal -->
+    <div class="modal" id="audit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Schedule New Audit</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="audit-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="audit-name">Audit Name</label>
+                            <input type="text" id="audit-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="audit-type-select">Audit Type</label>
+                            <select id="audit-type-select" required>
+                                <option value="">Select Type</option>
+                                <option value="Software">Software License</option>
+                                <option value="Hardware">Hardware Inventory</option>
+                                <option value="Security">Security Compliance</option>
+                                <option value="Network">Network Infrastructure</option>
+                                <option value="Data">Data Protection</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="audit-assignee-select">Assignee</label>
+                            <select id="audit-assignee-select" required>
+                                <option value="">Select Assignee</option>
+                                <option value="Rahul Sharma">Rahul Sharma</option>
+                                <option value="Priya Patel">Priya Patel</option>
+                                <option value="Vikram Singh">Vikram Singh</option>
+                                <option value="Ananya Desai">Ananya Desai</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="audit-scope">Scope</label>
+                            <select id="audit-scope" required>
+                                <option value="">Select Scope</option>
+                                <option value="Full">Full Organization</option>
+                                <option value="Department">Specific Department</option>
+                                <option value="Asset Group">Asset Group</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="audit-start-date">Start Date</label>
+                            <input type="date" id="audit-start-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="audit-end-date">End Date</label>
+                            <input type="date" id="audit-end-date" required>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="audit-description">Description & Objectives</label>
+                        <textarea id="audit-description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="audit-checklist">Audit Checklist</label>
+                        <div class="checklist-items">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check1" checked>
+                                <label for="check1">Verify all assets are properly tagged</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check2" checked>
+                                <label for="check2">Confirm software licenses match installations</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check3" checked>
+                                <label for="check3">Check security compliance on all devices</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check4">
+                                <label for="check4">Verify asset location matches records</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check5">
+                                <label for="check5">Confirm all assets are accounted for</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn">Cancel</button>
+                        <button type="submit" class="submit-btn">Schedule Audit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="audits.js"></script>
+</body>
+</html> 
