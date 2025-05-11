@@ -4,26 +4,38 @@ include('config.php');
 error_reporting(0);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id=$_POST['id']; // Fixed variable name from $POST to $_POST
     $full_name = $_POST['full_name'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm-password'];
 
-    // Prepared statement to prevent SQL injection
-    $stmt = $conn->prepare("INSERT INTO users (id,full_name, email,password) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss",$id, $full_name, $email, $password);
-
-    if ($stmt->execute()) {
-        // Set success message in session
-        $_SESSION['signup_success'] = "Account created successfully! Please login.";
-        // Redirect to login page
-        header("Location: login.php");
-        exit();
+    // Password confirmation check
+    if ($password !== $confirm_password) {
+        $error_message = "Passwords do not match.";
     } else {
-        $error_message = "Error: " . $stmt->error;
+        // Check for duplicate email
+        $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->store_result();
+        if ($stmt->num_rows > 0) {
+            $error_message = "Email is already registered.";
+        } else {
+            // Hash the password
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+            // Insert new user
+            $stmt = $conn->prepare("INSERT INTO users (full_name, email, password) VALUES (?, ?, ?)");
+            $stmt->bind_param("sss", $full_name, $email, $hashed_password);
+            if ($stmt->execute()) {
+                $_SESSION['signup_success'] = "Account created successfully! Please login.";
+                header("Location: login.php");
+                exit();
+            } else {
+                $error_message = "Error: " . $stmt->error;
+            }
+        }
+        $stmt->close();
     }
-
-    $stmt->close();
 }
 
 $conn->close();
