@@ -5,12 +5,12 @@ pipeline {
         IMAGE_NAME = 'vishnups08/invest'
     }
 
-    stage('Clone Repo') {
-        steps {
-            git branch: 'main', url: 'https://github.com/Vishnups08/invest.git'
+    stages {
+        stage('Clone Repo') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Vishnups08/invest.git'
+            }
         }
-    }
-
 
         stage('Build Docker Image') {
             steps {
@@ -38,8 +38,8 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Triggering Render deployment...'
-                sh 'curl -X POST https://api.render.com/deploy/srv-xxxxxxxxxx?key=xxxxxxxxxx'
+                echo 'Trigger deployment on Render or other host'
+            }
+        }
     }
-}
 }
