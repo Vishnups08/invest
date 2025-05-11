@@ -79,7 +79,3 @@ See `Jenkinsfile` for a sample pipeline.
 - Never commit real credentials to the repository.
 - Use environment variables for all secrets and database credentials.
 
----
-
-## License
-MIT 
