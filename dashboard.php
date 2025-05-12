@@ -16,7 +16,7 @@ $investmentStmt->bind_param('i', $user_id);
 $investmentStmt->execute();
 $investmentResult = $investmentStmt->get_result();
 $investmentData = $investmentResult->fetch_assoc();
-$totalInvestment = number_format($investmentData['total_investment']);
+$totalInvestment = number_format($investmentData['total_investment'] ?? 0);
 
 // Total Assets value: sum of all assets (cost) for this user
 $assetsValueQuery = "SELECT SUM(cost) as total_assets_value FROM assets WHERE user_id = ?";
@@ -25,7 +25,7 @@ $assetsValueStmt->bind_param('i', $user_id);
 $assetsValueStmt->execute();
 $assetsValueResult = $assetsValueStmt->get_result();
 $assetsValueData = $assetsValueResult->fetch_assoc();
-$totalAssetsValue = number_format($assetsValueData['total_assets_value']);
+$totalAssetsValue = number_format($assetsValueData['total_assets_value'] ?? 0);
 
 $assetsQuery = "SELECT COUNT(*) as total_assets FROM assets WHERE user_id = ?";
 $assetsStmt = $conn->prepare($assetsQuery);
