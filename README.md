@@ -58,7 +58,6 @@ https://invest-diq7.onrender.com
    - Add these environment variables:
      - `DB_HOST` (e.g., sql12.freesqldatabase.com)
      - `DB_USER`, `DB_PASSWORD`, `DB_NAME`
-3. (Optional) Use a [Deploy Hook](https://render.com/docs/deploy-hooks) for CI/CD.
 
 ---
 
@@ -66,7 +65,6 @@ https://invest-diq7.onrender.com
 - Example Jenkins pipeline:
   - Clone repo
   - Build Docker image
-  - (Optional) Push to DockerHub
   - Trigger Render.com deploy via Deploy Hook
 
 See `Jenkinsfile` for a sample pipeline.
