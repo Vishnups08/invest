@@ -17,7 +17,7 @@ $name = $_POST['name'];
 $category = $_POST['category'];
 $department = $_POST['department'];
 $budget = floatval($_POST['budget']);
-$current_value = floatval($_POST['current_value']);
+$current_value = isset($_POST['current_value']) ? floatval($_POST['current_value']) : 0.0;
 $startDate = $_POST['start_date'];
 $endDate = !empty($_POST['end_date']) ? $_POST['end_date'] : null;
 $roiPercentage = isset($_POST['roi_percentage']) && $_POST['roi_percentage'] !== '' ? floatval($_POST['roi_percentage']) : null;
