@@ -4,6 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'invest'
         PATH = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${env.PATH}"
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
     }
     
     stages {
@@ -15,9 +16,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    docker.build(IMAGE_NAME)
-                }
+                sh 'docker build -t ${IMAGE_NAME} .'
             }
         }
 
@@ -29,11 +28,10 @@ pipeline {
 
         stage('Push to DockerHub') {
             steps {
-                withDockerRegistry([credentialsId: 'dockerhub-creds', url: '']) {
-                    script {
-                        docker.image(IMAGE_NAME).push('latest')
-                    }
-                }
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                sh 'docker tag ${IMAGE_NAME} ${DOCKERHUB_CREDENTIALS_USR}/${IMAGE_NAME}:latest'
+                sh 'docker push ${DOCKERHUB_CREDENTIALS_USR}/${IMAGE_NAME}:latest'
+                sh 'docker logout'
             }
         }
 
@@ -45,3 +43,4 @@ pipeline {
         }
     }
 }
+
