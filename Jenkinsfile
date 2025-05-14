@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'invest'
     }
-
+    
     stages {
         stage('Clone Repo') {
             steps {
@@ -38,7 +38,8 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Trigger deployment on Render or other host'
+                echo 'Triggering Render deployment...'
+                sh 'curl -X POST https://api.render.com/deploy/srv-xxxxxxxxxx?key=xxxxxxxxxx'
             }
         }
     }
