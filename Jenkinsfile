@@ -38,7 +38,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Triggering Render deployment...'
-                sh 'curl -X POST https://api.render.com/deploy/srv-xxxxxxxxxx?key=xxxxxxxxxx'
+                sh 'curl -X POST https://api.render.com/deploy/srv-d0g5n0buibrs73f9gimg?key=mJxztRPfAHU'
             }
         }
     }
