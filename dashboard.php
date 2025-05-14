@@ -65,7 +65,7 @@ if (!empty($end_date) && preg_match('/^\\d{4}$/', $end_date)) {
     <!-- Sidebar Navigation -->
     <nav class="sidebar">
         <div class="logo">
-            <h2><i class="fas fa-laptop-code"></i> Asset & invest Manager</h2>
+            <h2><i class="fas fa-laptop-code"></i> Asset & Investment Manager</h2>
         </div>
         <ul class="nav-links">
             <li class="active"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
