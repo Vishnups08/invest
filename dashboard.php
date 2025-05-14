@@ -111,7 +111,6 @@ if (!empty($end_date) && preg_match('/^\\d{4}$/', $end_date)) {
                         <div class="card-info">
                             <h3>Total Investments</h3>
                             <p class="value">₹<?php echo $totalInvestment; ?></p>
-                            <p class="change positive"><i class="fas fa-arrow-up"></i> 8.5% since last month</p>
                         </div>
                     </div>
                     <div class="card">
@@ -121,7 +120,6 @@ if (!empty($end_date) && preg_match('/^\\d{4}$/', $end_date)) {
                         <div class="card-info">
                             <h3>Total Assets value</h3>
                             <p class="value">₹<?php echo $totalAssetsValue; ?></p>
-                            <p class="change positive"><i class="fas fa-arrow-up"></i> 12.3% since last month</p>
                         </div>
                     </div>
                     <div class="card">
@@ -131,7 +129,6 @@ if (!empty($end_date) && preg_match('/^\\d{4}$/', $end_date)) {
                         <div class="card-info">
                             <h3>Total Assets</h3>
                             <p class="value"><?php echo $totalAssets; ?></p>
-                            <p class="change positive"><i class="fas fa-arrow-up"></i> 24 new this month</p>
                         </div>
                     </div>
                     <div class="card">
@@ -141,7 +138,6 @@ if (!empty($end_date) && preg_match('/^\\d{4}$/', $end_date)) {
                         <div class="card-info">
                             <h3>Pending Audits</h3>
                             <p class="value"><?php echo $pendingAudits; ?></p>
-                            <p class="change negative"><i class="fas fa-arrow-up"></i> 3 more than last month</p>
                         </div>
                     </div>
                 </div>
