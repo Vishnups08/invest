@@ -3,10 +3,6 @@
 A web-based asset and investment management application built with PHP and MySQL. Easily track, manage, and report on your investments.
 
 ---
-## Demo Link
-https://invest-diq7.onrender.com
----
----
 
 ## Features
 - User authentication (login/signup)
